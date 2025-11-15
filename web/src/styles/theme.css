@@ -1,0 +1,83 @@
+/* 门户网站主题CSS变量定义 */
+:root {
+  /* 颜色变量 */
+  --portal-primary-color: #409eff;
+  --portal-secondary-color: #67c23a;
+  --portal-background-color: #ffffff;
+  --portal-text-color: #333333;
+
+  /* 字体变量 */
+  --portal-font-family: Arial, sans-serif;
+  --portal-font-size: 14px;
+
+  /* 样式变量 */
+  --portal-border-radius: 4px;
+  --portal-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  /* 网站信息变量 */
+  --portal-site-name: '门户网站';
+  --portal-site-description: '欢迎访问我们的门户网站';
+  --portal-footer-text: '© 2024 门户网站. All rights reserved.';
+
+  /* Logo和图标变量 */
+  --portal-logo-url: none;
+}
+
+/* 门户网站通用样式 */
+.portal-container {
+  background-color: var(--portal-background-color);
+  color: var(--portal-text-color);
+  font-family: var(--portal-font-family);
+  font-size: var(--portal-font-size);
+}
+
+/* 门户网站头部样式 */
+.portal-header {
+  background: linear-gradient(135deg, var(--portal-primary-color) 0%, var(--portal-secondary-color) 100%);
+  box-shadow: var(--portal-shadow);
+}
+
+/* 门户网站按钮样式 */
+.portal-btn {
+  background-color: var(--portal-primary-color);
+  border-radius: var(--portal-border-radius);
+  box-shadow: var(--portal-shadow);
+}
+
+/* 门户网站卡片样式 */
+.portal-card {
+  background-color: var(--portal-background-color);
+  border-radius: var(--portal-border-radius);
+  box-shadow: var(--portal-shadow);
+}
+
+/* 门户网站链接样式 */
+.portal-link {
+  color: var(--portal-primary-color);
+}
+
+/* 门户网站文本样式 */
+.portal-text {
+  color: var(--portal-text-color);
+}
+
+/* 门户网站标题样式 */
+.portal-title {
+  color: var(--portal-text-color);
+  font-family: var(--portal-font-family);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  :root {
+    --portal-font-size: 12px;
+  }
+}
+
+/* 暗色主题支持 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --portal-background-color: #1d1e1f;
+    --portal-text-color: #e5eaf3;
+  }
+}

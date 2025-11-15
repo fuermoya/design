@@ -1,0 +1,43 @@
+.idea/
+/web/node_modules
+/web/dist
+server/.idea/*
+server/.vscode/*
+server/*.exe
+server/*.conf
+server/*.ini
+logsrv/.idea/*
+*_test.go
+#deploy/docker-compose/data/*
+
+
+.DS_Store
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+*.iml
+web/.pnpm-debug.log
+web/pnpm-lock.yaml
+
+server/uploads/**
+
+server/config.yaml
+server/env.ini
+web/.env.test
+server/config.docker.copy.yaml
