@@ -1,0 +1,69 @@
+# system 管理后台配置
+system:
+  env: local # 修改为public可以关闭路由日志输出
+  addr: 8881
+  use-multipoint: true # 多点登录拦截
+  #  路由全局前缀
+  router-prefix: ""
+
+# jwt configuration
+jwt:
+  signing-key: e04d3f8-e047-11ee-b81b5-a8a1596c8f197
+  expires-time: 7d
+  buffer-time: 1d
+  issuer: admin
+# zap logger configuration
+zap:
+  level: info
+  format: console
+  prefix: "[github.com/fuermoya/design/server]"
+  director: C:\poj_log\kbzb\log
+  show-line: true
+  encode-level: LowercaseColorLevelEncoder
+  stacktrace-key: stacktrace
+  log-in-console: true
+
+# captcha configuration
+captcha:
+  key-long: 6
+  img-width: 240
+  img-height: 80
+  open-captcha: 0 # 0代表一直开启，大于0代表限制次数
+  open-captcha-timeout: 3600 # open-captcha大于0时才生效
+
+# local configuration
+local:
+  path: /uploads/file
+  store-path: uploads/file
+
+# mysql connect configuration
+mysql:
+  path: 127.0.0.1
+  port: "3306"
+  config: charset=utf8mb4&parseTime=True&loc=Local
+  db-name: design_test
+  username: root
+  password: "123456"
+  prefix: ""
+  singular: false
+  engine: ""
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: error
+  log-zap: false
+
+# 跨域配置
+cors:
+  mode: strict-whitelist # 放行模式: allow-all, 放行全部; whitelist, 白名单模式, 来自白名单内域名的请求添加 cors 头; strict-whitelist 严格白名单模式, 白名单外的请求一律拒绝
+  whitelist:
+    - allow-origin: example1.com
+      allow-headers: Content-Type,AccessToken,X-CSRF-Token, Authorization, Token,X-Token,X-User-Id
+      allow-methods: POST, GET
+      expose-headers: Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type
+      allow-credentials: true # 布尔值
+
+    - allow-origin: example2.com
+      allow-headers: content-type
+      allow-methods: GET, POST
+      expose-headers: Content-Length, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Content-Type
+      allow-credentials: true # 布尔值
